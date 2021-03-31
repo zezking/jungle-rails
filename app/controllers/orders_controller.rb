@@ -36,6 +36,7 @@ class OrdersController < ApplicationController
   end
 
   def create_order(stripe_charge)
+    empty_cart!
     order = Order.new(
       email: params[:stripeEmail],
       total_cents: cart_subtotal_cents,
