@@ -1,7 +1,8 @@
 <section class="orders-show">
 <% enhanced_cart%>
   <header class="page-header">
-    <h1>Order #<%= @order.id %> for <h1><%= @order.email %></h1></h1>
+    <h1>Order #<%= @order.id %></h1>
+    <h4>Email: <%= @order.email %></h4>
   </header>
   <table class="table table-bordered">
       <thead>
@@ -31,6 +32,7 @@
     </table>
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
