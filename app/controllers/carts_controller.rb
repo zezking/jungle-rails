@@ -1,7 +1,9 @@
 class CartsController < ApplicationController
 
   def show
-
+    if @enhanced_cart.blank?
+      flash[:notice]="it's empty"
+    end
   end
   def add_item
     product_id = params[:product_id].to_s

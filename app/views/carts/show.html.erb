@@ -3,11 +3,17 @@
   <header class="page-header">
 <% if enhanced_cart.blank?%>
 <%=render 'empty_cart' %>
+
+
+<div class="alert alert-info">
+ <p> Your cart is empty! </p>
+</div>
+
 <% else %> 
     <h1>My Cart</h1>
   </header>
   <div class="panel panel-default items">
-  <%= "debugger"%>
+
     <table class="table table-bordered">
       <thead>
         <tr>
