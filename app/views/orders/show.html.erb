@@ -1,9 +1,34 @@
 <section class="orders-show">
-
+<% enhanced_cart%>
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
   </header>
-
+  <table class="table table-bordered">
+      <thead>
+        <tr>
+          <h1><th colspan="2">Order Details</th></h1>
+          <h1><%@order.email%></h1>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% enhanced_cart.each do |item| %>
+          <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">
+            TOTAL:
+          </th>
+          <th>
+            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
+          </th>
+        </tr>
+      </tfoot>
+    </table>
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
