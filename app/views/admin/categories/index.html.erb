@@ -1,5 +1,5 @@
-<section class="admin-products-index">
 
+<section class="admin-products-index">
   <header class="page-header">
     <h1>Admin &raquo; All Categories</h1>
   </header>
@@ -13,14 +13,11 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th colspan="2">Product</th>
-          <th>Category</th>
-          <th>Price</th>
-          <th>Qty Remaining</th>
-          <th></th>
+          <th >Categories</th>
         </tr>
       </thead>
       <tbody>
+     <%= render @categories %>
       </tbody>
     </table>
 
