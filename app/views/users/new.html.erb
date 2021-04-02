@@ -4,35 +4,35 @@
 <h1>Please Enter Your Information</h1>
   <div class="row">
       <div class="col-sm-3 col-sm-offset-1">
-<%= form_for :user, url: '/users' do |f| %>
+<%= form_for :user, url: '/users' do |form| %>
 
 
     <div class="form-group">
-          <%= f.label :first_name %>
-          <%= f.text_field :first_name, class: 'form-control' %>
+          <%= form.label :first_name %>
+          <%= form.text_field :first_name, class: 'form-control' %>
    
 
-          <%= f.label :last_name %>
-          <%= f.text_field :last_name, class: 'form-control' %>
+          <%= form.label :last_name %>
+          <%= form.text_field :last_name, class: 'form-control' %>
  
    
-          <%= f.label :email %>
-          <%= f.text_field :email, class: 'form-control' %>
+          <%= form.label :email %>
+          <%= form.text_field :email, class: 'form-control' %>
     
 
  
 
-          <%= f.label :password %>
-          <%= f.password_field :password, class: 'form-control' %>
+          <%= form.label :password %>
+          <%= form.password_field :password, class: 'form-control' %>
     
 
    
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
+          <%= form.label :password_confirmation %>
+          <%= form.password_field :password_confirmation, class: 'form-control' %>
     </div>
 
 
-    <%= f.submit 'submit', class: 'btn btn-primary' %>
+    <%= form.submit 'submit', class: 'btn btn-primary' %>
 
 <% end %>
 
