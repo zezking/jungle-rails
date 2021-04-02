@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user
   end
 
+  def current_sale
+    @curent_sale ||= Sale.where("sales.starts_on<=? AND sales.ends_on >= ?", Date.current, Date.current)
+    puts @current_sale
+  end
 
   def cart
     @cart ||= cookies[:cart].present? ? JSON.parse(cookies[:cart]) : {}
