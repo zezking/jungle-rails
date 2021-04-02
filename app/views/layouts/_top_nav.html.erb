@@ -27,13 +27,14 @@
           <li><%= link_to "About", [:about, :index]%></li>
 
            <% if current_user %>
-  <li>Signed in as <%= current_user.first_name %> </li>
-  <li><%= link_to "Logout", '/logout' %></li>
-<% else %>
-  <li><%= link_to 'Login', '/login' %></li>
-   <li><%= link_to 'Signup', '/signup' %></li>
-<% end %>
-      
+        <li><%= link_to "Logout", '/logout' %></li>
+        <li><%= current_user.first_name %></li>
+          
+        <% else %>
+          <li><%= link_to 'Login', '/login' %></li>
+          <li><%= link_to 'Signup', '/signup' %></li>
+        <% end %>
+              
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
