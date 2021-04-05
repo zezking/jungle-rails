@@ -15,13 +15,15 @@ RSpec.describe Product, type: :model do
        expect(@product).to be_valid
       end         
       it "should not be valid without a name" do
+        @category=Category.new(name:"Test-Category")
         @product=Product.new(
             name:nil,
             price:"0",
             quantity:"1",
-            category:Category.new
+            category:@category
         )
         expect(@product).to_not be_valid
+        
       end         
       it "should not be valid without a price" do
         @product=Product.new(
@@ -30,7 +32,7 @@ RSpec.describe Product, type: :model do
             quantity:"1",
             category:Category.new
         )
-        expect(@product).to_not be_valid   
+        expect(@product).to_not be_valid
       end  
       it "should not be valid without a quantity" do
         @product=Product.new(

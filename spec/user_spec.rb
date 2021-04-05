@@ -8,8 +8,8 @@ RSpec.describe User, type: :model do
                 first_name:"Sori", 
                 last_name:"Han",
                 email:"example@gmail.com",
-                password:"123", 
-                password_confirmation:"123")
+                password:"12345", 
+                password_confirmation:"12345")
             expect(@user).to be_valid
         end
         it "should throw error when password and confirmations are not present" do
@@ -35,15 +35,24 @@ RSpec.describe User, type: :model do
                 first_name:"Sori", 
                 last_name:"Han", 
                 email:"example@gmail.com",
-                password:"123", 
-                password_confirmation:"321")
+                password:"12345", 
+                password_confirmation:"12345")
             @user2 = User.new(
                 first_name:"Sori", 
                 last_name:"Han", 
                 email:"EXAMPLE@gmail.com",
-                password:"123", 
-                password_confirmation:"321")
+                password:"12345", 
+                password_confirmation:"12345")
             expect(@user2).to_not be_valid
+        end
+        it "throw an error if the password is too short" do
+            @user= User.new(
+                first_name:"Sori", 
+                last_name:"Han", 
+                email:"example@gmail.com",
+                password:"123", 
+                password_confirmation:"123")
+            expect(@user.e).to be_valid
         end
     end
   end
