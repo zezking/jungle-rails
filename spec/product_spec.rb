@@ -6,7 +6,7 @@ RSpec.describe Product, type: :model do
     
       
       it "should be valid with valid attributes" do
-       @product=Product.new(
+       @product=Product.create(
                 name:"test-product",
                 price:"0",
                 quantity:"1",
@@ -15,8 +15,8 @@ RSpec.describe Product, type: :model do
        expect(@product).to be_valid
       end         
       it "should not be valid without a name" do
-        @category=Category.new(name:"Test-Category")
-        @product=Product.new(
+        @category=Category.create(name:"Test-Category")
+        @product=Product.create(
             name:nil,
             price:"0",
             quantity:"1",
@@ -26,7 +26,7 @@ RSpec.describe Product, type: :model do
         
       end         
       it "should not be valid without a price" do
-        @product=Product.new(
+        @product=Product.create(
             name:"test-product",
             price:nil,
             quantity:"1",
@@ -35,7 +35,7 @@ RSpec.describe Product, type: :model do
         expect(@product).to_not be_valid
       end  
       it "should not be valid without a quantity" do
-        @product=Product.new(
+        @product=Product.create(
             name:"test-product",
             price:"0",
             quantity:nil,
@@ -44,7 +44,7 @@ RSpec.describe Product, type: :model do
    expect(@product).to_not be_valid
       end        
       it "should not be valid without category" do
-        @product=Product.new(
+        @product=Product.create(
             name:"test-product",
             price:"0",
             quantity:"1",
